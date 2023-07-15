@@ -1,12 +1,14 @@
 package arman.example.spring.dao;
 
 import arman.example.spring.model.Person;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class FakePersonDataAccessService implements PersonDao{
+@Repository("fakeDao")
+public class FakePersonDataAccessService implements PersonDao {
 
     private static List<Person> DB = new ArrayList<>();
 

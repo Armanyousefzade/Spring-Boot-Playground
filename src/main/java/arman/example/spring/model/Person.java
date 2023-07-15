@@ -1,5 +1,7 @@
 package arman.example.spring.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class Person {
@@ -7,7 +9,8 @@ public class Person {
     private final UUID id;
     private final String name;
 
-    public Person(final UUID id, final String name) {
+    public Person(@JsonProperty final UUID id,
+            @JsonProperty final String name) {
         this.id = id;
         this.name = name;
     }
