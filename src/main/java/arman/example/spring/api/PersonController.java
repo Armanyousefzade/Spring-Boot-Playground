@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RequestMapping("api/v1/person")
 @RestController
@@ -30,5 +31,9 @@ public class PersonController {
     @GetMapping
     public List<Person> getAllPeople(){
         return personService.getAllPeople();
+    }
+
+    public Person getPersonById(UUID id){
+        return personService.getPersonById(id).orElse(null);
     }
 }
